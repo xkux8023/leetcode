@@ -1,18 +1,18 @@
 export default (array) => {
-  array.filter(item => item > 0)
-  for (let i = 0, len = array.length, min; i < len; i++) {
-    min = array[i]
+  var arr = array.filter(item => item > 0)
+  for (let i = 0, len = arr.length, min; i < len; i++) {
+    min = arr[i]
     for (let j = i + 1; j < len; j++) {
-      if (array[j] < min) {
+      if (arr[j] < min) {
         let c = min
-        min = array[j]
-        array[j] = c
+        min = arr[j]
+        arr[j] = c
       }
     }
-    array[i] = min
+    arr[i] = min
     if (i > 0) {
-      if (array[i] - array[i - 1] > 1) {
-        return array[i - 1] + 1
+      if (arr[i] - arr[i - 1] > 1) {
+        return arr[i - 1] + 1
       }
     } else {
       if (min !== 1) {
@@ -20,5 +20,5 @@ export default (array) => {
       }
     }
   }
-  return array.length ? array.pop() + 1 : 1
+  return arr.length ? arr.pop() + 1 : 1
 }
